@@ -10,22 +10,21 @@ class App extends Component {
       { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
       { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' }
+      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
   };
 
-componentDidMount() {
-  const contacts = JSON.parse(localStorage.getItem('contacts'));
-  this.setState({ contacts });
-}
+  componentDidMount() {
+    const contacts = JSON.parse(localStorage.getItem('contacts'));
+    this.setState({ contacts });
+  }
 
   componentDidUpdate(prevState) {
     if (prevState.contacts !== this.state.contacts) {
-      localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
-
 
   handleFormSubmit = ({ name, number }) => {
     if (name === '') {
@@ -38,10 +37,10 @@ componentDidMount() {
       return alert(`Number ${number} is already in contacts`);
     }
     if (name === '') {
-      return alert(`Name field should be filled`)
+      return alert(`Name field should be filled`);
     }
     if (number === '') {
-      return alert(`Number field should be filled`)
+      return alert(`Number field should be filled`);
     }
     const newContact = {
       id: nanoid(),
