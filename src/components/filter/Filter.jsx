@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { usePhonebook } from 'providers/PhonebookProvider';
 
 const Filter = () => {
@@ -12,8 +11,3 @@ return (
 )};
 
 export default Filter;
-
-Filter.propTypes = {
-  value: PropTypes.string,
-  onChange: PropTypes.func
-}
